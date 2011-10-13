@@ -3,7 +3,7 @@ require 'rake'
 
 Gem::Specification.new do |spec|
 	spec.name = 'silo_manager'
-	spec.version = '0.0.1'
+	spec.version = '0.0.4'
 	spec.platform=Gem::Platform::RUBY
 	spec.homepage='https://github.com/chrlee/Nexpose_silo_manager'
 	spec.description=
