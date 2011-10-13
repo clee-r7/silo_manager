@@ -49,7 +49,7 @@ ORG_ATTRS = ['url:string:required', 'company:string:required', 'email-address:st
 
 #-------------------------------------------------------------------------
 #-------------------------------------------------------------------------
-def get_integer_input name, return_main=false, required
+def get_integer_input name, return_main=false, required=false
 	integer_inputed = false
 	while !integer_inputed
 		puts "Enter an integer value for #{name}:"
@@ -79,7 +79,7 @@ end
 
 #-------------------------------------------------------------------------
 #-------------------------------------------------------------------------
-def get_string_input name, return_main=false, required
+def get_string_input name, return_main=false, required=false
 	success = false
 	while !success
 		puts "Enter an string value for #{name}:"
@@ -101,7 +101,7 @@ end
 
 #-------------------------------------------------------------------------
 #-------------------------------------------------------------------------
-def get_boolean_input name='', return_main=false, required
+def get_boolean_input name='', return_main=false, required=false
 	boolean_inputed = false
 	while !boolean_inputed
 		puts "Enter a boolean value (true/1 or false/0) for #{name}:"
