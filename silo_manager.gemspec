@@ -8,11 +8,11 @@ Gem::Specification.new do |spec|
 	spec.homepage='https://github.com/chrlee/Nexpose_silo_manager'
 	spec.description=
 <<Description
-  This is a tool is used to provide CRUD silo operations.
+  This is a tool is used to provide CRUD silo operations for Nexpose.
 Description
 	spec.summary=
 <<Summary
-	This is a tool is used to provide CRUD silo operations.
+	This is a tool is used to provide CRUD silo operations for Nexpose.
 Summary
 	spec.add_dependency 'librex', '>= 0.0.32'
 	spec.author = 'Christopher Lee'
