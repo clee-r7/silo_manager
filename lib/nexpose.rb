@@ -553,7 +553,7 @@ module NexposeAPI
 	# Lists all the multi-tenant users and their attributes.
 	#-------------------------------------------------------------------------
 	def list_mtu
-		xml = make_xml('MultiTenamtUserListingRequest')
+		xml = make_xml('MultiTenantUserListingRequest')
 		r = execute xml, '1.2'
 
 		if r.success

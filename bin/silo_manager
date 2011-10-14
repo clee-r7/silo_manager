@@ -424,12 +424,13 @@ def list_mtu
 		puts "For detailed information on a specific mtu enter the id"
 		puts "Or just hit enter to list all ids"
 
-		id = get_integer_input 'MTU ID'
+		id = get_integer_input 'MTU ID', true
 		if id == :main
 			return
 		elsif id.nil?
+			puts 'List of MTU IDs:'
 			mtu_list.each do |mtu_map|
-				put mtu_map[:id]
+				puts mtu_map[:id]
 			end
 		else
 			id_found = false
@@ -466,15 +467,17 @@ def delete_mtu
 				if name == :main
 					return
 				end
+			when /:main/
+				return
 			else
-				put 'Invalid input'
+				puts 'Invalid input'
 				next
 		end
 
 		begin
 			@client_api.login
 			@client_api.delete_mtu name, id
-			put 'Successfully deleted MTU!'
+			puts 'Successfully deleted MTU!'
 		rescue Exception => e
 			puts e.message
 		end
@@ -499,15 +502,17 @@ def delete_silo_profile
 				if name == :main
 					return
 				end
+			when /:main/
+				return
 			else
-				put 'Invalid input'
+				puts 'Invalid input'
 				next
 		end
 
 		begin
 			@client_api.login
 			@client_api.delete_silo_profile name, id
-			put 'Successfully deleted silo profile!'
+			puts 'Successfully deleted silo profile!'
 		rescue Exception => e
 			puts e.message
 		end
@@ -531,15 +536,17 @@ def delete_silo
 				if name == :main
 					return
 				end
+			when /:main/
+				return
 			else
-				put 'Invalid input'
+				puts 'Invalid input'
 				next
 		end
 
 		begin
 			@client_api.login
 			@client_api.delete_silo name, id
-			put 'Successfully deleted silo!'
+			puts 'Successfully deleted silo!'
 		rescue Exception => e
 			puts e.message
 		end
