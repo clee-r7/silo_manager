@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c869cecb-2fa6-4ee2-9d07-921349c732d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/silo_manager" afterPath="$PROJECT_DIR$/bin/silo_manager" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silo_manager.gemspec" afterPath="$PROJECT_DIR$/silo_manager.gemspec" />
     </list>
     <ignored path="silo_manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +39,7 @@
       <file leaf-file-name="nexpose.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/nexpose.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="812" column="12" selection-start="24612" selection-end="24612" vertical-scroll-proportion="0.0">
+            <state line="983" column="41" selection-start="28653" selection-end="28653" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +57,7 @@
       <file leaf-file-name="silo_manager" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/silo_manager">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="500" column="40" selection-start="12995" selection-end="12995" vertical-scroll-proportion="0.0">
+            <state line="224" column="21" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -365,16 +367,16 @@
         <state line="25" column="38" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/silo_manager">
+    <entry file="file://$PROJECT_DIR$/lib/nexpose.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="500" column="40" selection-start="12995" selection-end="12995" vertical-scroll-proportion="0.0">
+        <state line="983" column="41" selection-start="28653" selection-end="28653" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/nexpose.rb">
+    <entry file="file://$PROJECT_DIR$/bin/silo_manager">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="812" column="12" selection-start="24612" selection-end="24612" vertical-scroll-proportion="0.0">
+        <state line="224" column="21" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

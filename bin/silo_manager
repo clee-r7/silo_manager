@@ -271,7 +271,7 @@ def create_multi_tenant_user
 	end
 
 	begin
-		@client_api.login
+		#@client_api.login
 		@client_api.create_multi_tenant_user user_config, silo_configs
 		puts "Successfully created multi-tenant user!"
 	rescue Exception => e
@@ -353,7 +353,7 @@ def create_silo_profile
 	end
 
 	begin
-		@client_api.login
+		#@client_api.login
 		@client_api.create_silo_profile silo_profile_config, permissions
 		puts "Successfully created silo profile!"
 	rescue Exception => e
@@ -400,7 +400,7 @@ def create_silo
 	end
 
 	begin
-		@client_api.login
+		#@client_api.login
 		@client_api.create_silo silo_config
 		puts "Successfully created silo!"
 	rescue Exception => e
@@ -413,7 +413,7 @@ def list_mtu
 
 	while !main_selected
 		begin
-			@client_api.login
+			#@client_api.login
 			mtu_list = @client_api.list_mtu
 		rescue Exception => e
 			puts e.message
@@ -455,7 +455,7 @@ def list_silo_profiles
 	while !main_selected
 
 		begin
-			@client_api.login
+			#@client_api.login
 			silo_profile_map = @client_api.list_silo_profiles
 		rescue Exception => e
 			puts e.message
@@ -497,7 +497,7 @@ def list_silos
 	while !main_selected
 
 		begin
-			@client_api.login
+			#@client_api.login
 			silo_map = @client_api.list_silos
 		rescue Exception => e
 			puts e.message
@@ -558,7 +558,7 @@ def delete_mtu
 		end
 
 		begin
-			@client_api.login
+			#@client_api.login
 			@client_api.delete_mtu name, id
 			puts 'Successfully deleted MTU!'
 		rescue Exception => e
@@ -577,7 +577,7 @@ def delete_silo_profile
 		end
 
 		begin
-			@client_api.login
+			#@client_api.login
 			@client_api.delete_silo_profile nil, id
 			puts 'Successfully deleted silo profile!'
 		rescue Exception => e
@@ -611,7 +611,7 @@ def delete_silo
 		end
 
 		begin
-			@client_api.login
+			#@client_api.login
 			@client_api.delete_silo name, id
 			puts 'Successfully deleted silo!'
 		rescue Exception => e
