@@ -408,6 +408,144 @@ def create_silo
 	end
 end
 
+def list_mtu
+	main_selected = false
+
+	while !main_selected
+		mtu_list = []
+		begin
+			@client_api.login
+			mtu_list = @client_api.list_mtu
+		rescue Exception => e
+			puts e.message
+		end
+
+		puts "To return to the main menu type ':main'"
+		puts "For detailed information on a specific mtu enter the id"
+		puts "Or just hit enter to list all ids"
+
+		id = get_integer_input 'MTU ID'
+		if id == :main
+			return
+		elsif id.nil?
+			mtu_list.each do |mtu_map|
+				put mtu_map[:id]
+			end
+		else
+			id_found = false
+			mtu_list.each do |mtu_map|
+				if mtu_map[:id].to_i == id
+					puts mtu_map.inspect
+					id_found = true
+					break
+				end
+			end
+
+			if !id_found
+				puts "MTU ID not found"
+			end
+		end
+
+	end
+end
+
+def delete_mtu
+	while true
+		puts "To return to the main menu type ':main'"
+		puts "Enter 1 to enter an ID and 2 for name"
+		input = gets
+		name, id = nil
+		case input
+			when /1/
+				id = get_string_input 'MTU Id', true, true
+				if id == :main
+					return
+				end
+			when /2/
+				name = get_string_input 'MTU Name', true, true
+				if name == :main
+					return
+				end
+			else
+				put 'Invalid input'
+				next
+		end
+
+		begin
+			@client_api.login
+			@client_api.delete_mtu name, id
+			put 'Successfully deleted MTU!'
+		rescue Exception => e
+			puts e.message
+		end
+	end
+end
+
+
+def delete_silo_profile
+	while true
+		puts "To return to the main menu type ':main'"
+		puts "Enter 1 to enter an ID and 2 for name"
+		input = gets
+		name, id = nil
+		case input
+			when /1/
+				id = get_string_input 'Silo Profile Id', true, true
+				if id == :main
+					return
+				end
+			when /2/
+				name = get_string_input 'Silo Profile Name', true, true
+				if name == :main
+					return
+				end
+			else
+				put 'Invalid input'
+				next
+		end
+
+		begin
+			@client_api.login
+			@client_api.delete_silo_profile name, id
+			put 'Successfully deleted silo profile!'
+		rescue Exception => e
+			puts e.message
+		end
+	end
+end
+
+def delete_silo
+	while true
+		puts "To return to the main menu type ':main'"
+		puts "Enter 1 to enter an ID and 2 for name"
+		input = gets
+		name, id = nil
+		case input
+			when /1/
+				id = get_string_input 'Silo Id', true, true
+				if id == :main
+					return
+				end
+			when /2/
+				name = get_string_input 'Silo Name', true, true
+				if name == :main
+					return
+				end
+			else
+				put 'Invalid input'
+				next
+		end
+
+		begin
+			@client_api.login
+			@client_api.delete_silo name, id
+			put 'Successfully deleted silo!'
+		rescue Exception => e
+			puts e.message
+		end
+	end
+end
+
 #-------------------------------------------------------------------------
 # Main input screen
 #-------------------------------------------------------------------------
@@ -418,6 +556,10 @@ def get_main_select
 		puts "1. Create a new multi-tenant user"
 		puts "2. Create a new silo-profile"
 		puts "3. Create a new silo"
+		puts "4. List multi-tenant users"
+		puts "5. Delete a multi-tenant user"
+		puts "6. Delete a silo profile"
+		puts "7. Delete a silo"
 
 		id = gets.chomp
 		if id =~ /quit/i
@@ -427,8 +569,7 @@ def get_main_select
 		begin
 			id = id.to_i
 			id_choosen = true
-		rescue Exception => e
-			e.
+		rescue Exception
 			puts "Input error"
 		end
 	end
@@ -458,6 +599,15 @@ begin
 				create_silo_profile
 			when 3
 				create_silo
+			when 4
+				list_mtu
+			when 5
+				delete_mtu
+			when 6
+				delete_silo_profile
+			when 7
+				delete_silo
+
 			else
 				puts "Invalid input"
 		end

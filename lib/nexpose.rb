@@ -485,7 +485,7 @@ module NexposeAPI
 						:end_time => site_scan_history.attributes['endTime'].to_s
 				}
 			end
-			return res
+			res
 		else
 			false
 		end
@@ -494,6 +494,10 @@ module NexposeAPI
 	###################
 	# SILO MANAGEMENT #
 	###################
+
+	#########################
+	# MULTI-TENANT USER OPS #
+	#########################
 
 	#-------------------------------------------------------------------------
 	# Creates a multi-tenant user
@@ -543,6 +547,49 @@ module NexposeAPI
 		r = execute xml, '1.2'
 		r.success
 	end
+
+
+	#-------------------------------------------------------------------------
+	# Lists all the multi-tenant users and their attributes.
+	#-------------------------------------------------------------------------
+	def list_mtu
+		xml = make_xml('MultiTenamtUserListingRequest')
+		r = execute xml, '1.2'
+
+		if r.success
+			res = []
+			r.res.elements.each("//MultiTenantUserSummary") do |mtu|
+				res << {
+					:id => mtu.attributes['id'],
+					:full_name => mtu.attributes['full-name'],
+					:user_name => mtu.attributes['user-name'],
+					:email => mtu.attributes['email'],
+					:super_user => mtu.attributes['superuser'],
+					:enabled => mtu.attributes['enabled'],
+					:auth_module => mtu.attributes['auth-module'],
+					:silo_count => mtu.attributes['silo-count'],
+					:locked => mtu.attributes['locked']
+				}
+			end
+			res
+		else
+			false
+		end
+	end
+
+	#-------------------------------------------------------------------------
+	# Delete a multi-tenant user
+	#-------------------------------------------------------------------------
+	def delete_mtu user_name, user_id
+		using_user_name = (user_name and not user_name.empty?)
+		xml = make_xml('MultiTenantUserDeleteRequest', (using_user_name ? {'user-name' => user_name} : {'user-id' => user_id}))
+		r = execute xml, '1.2'
+		r.success
+	end
+
+	####################
+	# SILO PROFILE OPS #
+	####################
 
 	#-------------------------------------------------------------------------
 	# Creates a silo profile
@@ -621,7 +668,21 @@ module NexposeAPI
 	end
 
 	#-------------------------------------------------------------------------
-	# Creates a silo profile
+	# Delete a silo profile
+	#-------------------------------------------------------------------------
+	def delete_silo_profile name, id
+		using_name = (name and not name.empty?)
+		xml = make_xml('SiloProfileDeleteRequest', (using_name ? {'name' => name} : {'silo-profile-id' => id}))
+		r = execute xml, '1.2'
+		r.success
+	end
+
+	####################
+	# SILO OPS #
+	####################
+
+	#-------------------------------------------------------------------------
+	# Creates a silo
 	#
 	# silo_config - A map of the silo creation data.
 	#
@@ -705,6 +766,16 @@ module NexposeAPI
 		end
 
 		xml.add_element silo_config_xml
+		r = execute xml, '1.2'
+		r.success
+	end
+
+	#-------------------------------------------------------------------------
+	# Delete a silo
+	#-------------------------------------------------------------------------
+	def delete_silo name, id
+		using_name = (name and not name.empty?)
+		xml = make_xml('SiloDeleteRequest', (using_name ? {'silo-name' => name} : {'silo-id' => id}))
 		r = execute xml, '1.2'
 		r.success
 	end
