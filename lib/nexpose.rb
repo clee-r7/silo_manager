@@ -668,6 +668,37 @@ module NexposeAPI
 	end
 
 	#-------------------------------------------------------------------------
+	# Lists all the silo profiles and their attributes.
+	#-------------------------------------------------------------------------
+	def list_silo_profiles
+		xml = make_xml('SiloProfileListingRequest')
+		r = execute xml, '1.2'
+
+		if r.success
+			res = []
+			r.res.elements.each("//SiloProfileSummary") do |silo_profile|
+				res << {
+					:id => silo_profile.attributes['id'],
+					:name => silo_profile.attributes['name'],
+					:description => silo_profile.attributes['description'],
+					:global_report_template_count => silo_profile.attributes['global-report-template-count'],
+					:global_scan_engine_count => silo_profile.attributes['global-scan-engine-count'],
+					:global_scan_template_count => silo_profile.attributes['global-scan-template-count'],
+					:licensed_module_count => silo_profile.attributes['licensed-module-count'],
+					:restricted_report_section_count => silo_profile.attributes['restricted-report-section-count'],
+					:all_licensed_modules => silo_profile.attributes['all-licensed-modules'],
+					:all_global_engines => silo_profile.attributes['all-global-engines'],
+					:all_global_report_templates => silo_profile.attributes['all-global-report-templates'],
+					:all_global_scan_templates => silo_profile.attributes['all-global-scan-templates']
+				}
+			end
+			res
+		else
+			false
+		end
+	end
+
+	#-------------------------------------------------------------------------
 	# Delete a silo profile
 	#-------------------------------------------------------------------------
 	def delete_silo_profile name, id
@@ -768,6 +799,28 @@ module NexposeAPI
 		xml.add_element silo_config_xml
 		r = execute xml, '1.2'
 		r.success
+	end
+
+	#-------------------------------------------------------------------------
+	# Lists all the silos and their attributes.
+	#-------------------------------------------------------------------------
+	def list_silos
+		xml = make_xml('SiloListingRequest')
+		r = execute xml, '1.2'
+
+		if r.success
+			res = []
+			r.res.elements.each("//SiloSummary") do |silo_profile|
+				res << {
+					:id => silo_profile.attributes['id'],
+					:name => silo_profile.attributes['name'],
+					:description => silo_profile.attributes['description']
+				}
+			end
+			res
+		else
+			false
+		end
 	end
 
 	#-------------------------------------------------------------------------

@@ -412,7 +412,6 @@ def list_mtu
 	main_selected = false
 
 	while !main_selected
-		mtu_list = []
 		begin
 			@client_api.login
 			mtu_list = @client_api.list_mtu
@@ -444,6 +443,90 @@ def list_mtu
 
 			if !id_found
 				puts "MTU ID not found"
+			end
+		end
+
+	end
+end
+
+def list_silo_profiles
+	main_selected = false
+
+	while !main_selected
+
+		begin
+			@client_api.login
+			silo_profile_map = @client_api.list_silo_profiles
+		rescue Exception => e
+			puts e.message
+		end
+
+		puts "To return to the main menu type ':main'"
+		puts "For detailed information on a specific silo profile enter the id"
+		puts "Or just hit enter to list all ids"
+
+		id = get_string_input 'Silo Profile ID', true
+		if id == :main
+			return
+		elsif id.nil?
+			puts 'List of Silo Profile IDs:'
+			silo_profile_map.each do |silo_profiles|
+				puts silo_profiles[:id]
+			end
+		else
+			id_found = false
+			silo_profile_map.each do |silo_profiles|
+				if silo_profiles[:id].eql?(id)
+					puts silo_profiles.inspect
+					id_found = true
+					break
+				end
+			end
+
+			if !id_found
+				puts "Silo Profile ID not found"
+			end
+		end
+
+	end
+end
+
+def list_silos
+	main_selected = false
+
+	while !main_selected
+
+		begin
+			@client_api.login
+			silo_map = @client_api.list_silos
+		rescue Exception => e
+			puts e.message
+		end
+
+		puts "To return to the main menu type ':main'"
+		puts "For detailed information on a specific silo enter the id"
+		puts "Or just hit enter to list all ids"
+
+		id = get_string_input 'Silo ID', true
+		if id == :main
+			return
+		elsif id.nil?
+			puts 'List of Silo IDs:'
+			silo_map.each do |silos|
+				puts silos[:id]
+			end
+		else
+			id_found = false
+			silo_map.each do |silos|
+				if silos[:id].eql?(id)
+					puts silos.inspect
+					id_found = true
+					break
+				end
+			end
+
+			if !id_found
+				puts "Silo ID not found"
 			end
 		end
 
@@ -488,30 +571,14 @@ end
 def delete_silo_profile
 	while true
 		puts "To return to the main menu type ':main'"
-		puts "Enter 1 to enter an ID and 2 for name"
-		input = gets
-		name, id = nil
-		case input
-			when /1/
-				id = get_string_input 'Silo Profile Id', true, true
-				if id == :main
-					return
-				end
-			when /2/
-				name = get_string_input 'Silo Profile Name', true, true
-				if name == :main
-					return
-				end
-			when /:main/
-				return
-			else
-				puts 'Invalid input'
-				next
+		id = get_string_input 'Silo Profile Id', true, true
+		if id == :main
+			return
 		end
 
 		begin
 			@client_api.login
-			@client_api.delete_silo_profile name, id
+			@client_api.delete_silo_profile nil, id
 			puts 'Successfully deleted silo profile!'
 		rescue Exception => e
 			puts e.message
@@ -564,9 +631,11 @@ def get_main_select
 		puts "2. Create a new silo-profile"
 		puts "3. Create a new silo"
 		puts "4. List multi-tenant users"
-		puts "5. Delete a multi-tenant user"
-		puts "6. Delete a silo profile"
-		puts "7. Delete a silo"
+		puts "5. List silo profiles"
+		puts "6. List silos"
+		puts "7. Delete a multi-tenant user"
+		puts "8. Delete a silo profile"
+		puts "9. Delete a silo"
 
 		id = gets.chomp
 		if id =~ /quit/i
@@ -609,10 +678,14 @@ begin
 			when 4
 				list_mtu
 			when 5
-				delete_mtu
+				list_silo_profiles
 			when 6
-				delete_silo_profile
+				list_silos
 			when 7
+				delete_mtu
+			when 8
+				delete_silo_profile
+			when 9
 				delete_silo
 
 			else
