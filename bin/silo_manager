@@ -658,7 +658,7 @@ end
 begin
 	options = Options.parse ARGV
 	begin
-		@client_api = Nexpose::Connection.new options.host, options.user, options.password, options.port
+		@client_api = Nexpose::Connection.new options.host, options.user, options.password, options.port, options.silo_id
 		@client_api.login
 	rescue Exception => e
 		puts "Unable to connect to #{options.host}"

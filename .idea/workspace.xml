@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c869cecb-2fa6-4ee2-9d07-921349c732d8" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\chlee\RubymineProjects\silo_manager\lib\test.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/silo_manager" afterPath="$PROJECT_DIR$/bin/silo_manager" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silo_manager.gemspec" afterPath="$PROJECT_DIR$/silo_manager.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/nexpose.rb" afterPath="$PROJECT_DIR$/lib/nexpose.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/options.rb" afterPath="$PROJECT_DIR$/lib/options.rb" />
     </list>
     <ignored path="silo_manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,19 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="nexpose.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/nexpose.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="983" column="41" selection-start="28653" selection-end="28653" vertical-scroll-proportion="0.0">
+            <state line="979" column="25" selection-start="28565" selection-end="28565" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -48,25 +41,25 @@
       <file leaf-file-name="options.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/options.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="38" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
+            <state line="22" column="69" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="silo_manager" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="silo_manager" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/silo_manager">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="21" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
+            <state line="659" column="19" selection-start="15993" selection-end="15993" vertical-scroll-proportion="0.5199005">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="silo_manager.gemspec" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="silo_manager.gemspec" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/silo_manager.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="118" selection-end="118" vertical-scroll-proportion="0.2238806">
+            <state line="14" column="74" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,12 +79,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/options.rb" />
         <option value="$PROJECT_DIR$/lib/test.rb" />
         <option value="$PROJECT_DIR$/bin/silo_manager.rb" />
-        <option value="$PROJECT_DIR$/lib/nexpose.rb" />
-        <option value="$PROJECT_DIR$/bin/silo_manager" />
         <option value="$PROJECT_DIR$/silo_manager.gemspec" />
+        <option value="$PROJECT_DIR$/lib/nexpose.rb" />
+        <option value="$PROJECT_DIR$/lib/options.rb" />
+        <option value="$PROJECT_DIR$/bin/silo_manager" />
       </list>
     </option>
   </component>
@@ -121,8 +114,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -145,36 +136,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="silo_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="silo_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="silo_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="silo_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,7 +162,7 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/bin/silo_manager" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="-h rhel55-6acu2-b0.labman.lax.rapid7.com -u nxadmin -p nxadmin" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="-h rhel55-6acu2-b0.labman.lax.rapid7.com -u nxadmin -p nxadmin -s default" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
@@ -267,22 +232,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1038" extended-state="6" />
+    <frame x="1592" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17101759" sideWeight="0.54966885" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14539683" sideWeight="0.5497449" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39403972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45033112" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4502551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -313,7 +278,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added silo reads" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login once" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -329,6 +294,7 @@
     <MESSAGE value="Updated to have delete functionality" />
     <MESSAGE value="Fixed a slew of bugs with last push" />
     <MESSAGE value="Added silo reads" />
+    <MESSAGE value="Login once" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -357,33 +323,30 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/test.rb">
+    <entry file="file://$PROJECT_DIR$/silo_manager.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" />
+        <state line="14" column="74" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/options.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" />
+        <state line="22" column="69" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/nexpose.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="983" column="41" selection-start="28653" selection-end="28653" vertical-scroll-proportion="0.0">
+        <state line="979" column="25" selection-start="28565" selection-end="28565" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/silo_manager">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="21" selection-start="6723" selection-end="6723" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silo_manager.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="118" selection-end="118" vertical-scroll-proportion="0.2238806">
+        <state line="659" column="19" selection-start="15993" selection-end="15993" vertical-scroll-proportion="0.5199005">
           <folding />
         </state>
       </provider>

@@ -962,11 +962,12 @@ class Connection
 	attr_reader :url
 
 	# Constructor for Connection
-	def initialize(ip, user, pass, port = 3780)
+	def initialize(ip, user, pass, port = 3780, silo_id = nil)
 		@host = ip
 		@port = port
 		@username = user
 		@password = pass
+		@silo_id = silo_id
 		@session_id = nil
 		@error = false
 		@url = "https://#{@host}:#{@port}/api/VERSION_STRING/xml"
@@ -975,7 +976,11 @@ class Connection
 	# Establish a new connection and Session ID
 	def login
 		begin
-			r = execute(make_xml('LoginRequest', { 'sync-id' => 0, 'password' => @password, 'user-id' => @username }))
+			login_hash = { 'sync-id' => 0, 'password' => @password, 'user-id' => @username }
+			unless @silo_id.nil?
+				login_hash['silo-id'] = @silo_id
+			end
+			r = execute(make_xml('LoginRequest', login_hash))
 		rescue APIError
 			raise AuthenticationFailed.new(r)
 		end
